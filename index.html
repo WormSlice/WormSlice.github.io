@@ -1,0 +1,315 @@
+<html><head><base href="." />
+<title>WormSlice by QuarkLCloud Technology™ - Descarga el Juego</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0a0a1f;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  perspective: 1000px;
+}
+
+.main-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.logo-container {
+  margin-bottom: 20px;
+}
+
+.company-name {
+  font-size: 1.2em;
+  color: #00ffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px rgba(0,255,255,0.5);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 50px;
+  position: relative;
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+  padding: 40px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 50px rgba(0,255,255,0.1);
+}
+
+.game-info {
+  padding: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+h1 {
+  font-size: 4.5em;
+  margin-bottom: 30px;
+  background: linear-gradient(45deg, #00ffff, #ff00ff, #00ffff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textGradient 3s linear infinite;
+  text-shadow: 0 0 20px rgba(0,255,255,0.3);
+}
+
+.description {
+  font-size: 1.3em;
+  line-height: 1.8;
+  color: #ddd;
+  margin-bottom: 40px;
+  text-shadow: 0 0 10px rgba(0,255,255,0.2);
+}
+
+.features {
+  list-style: none;
+  margin: 30px 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.features li {
+  margin: 15px 0;
+  padding: 20px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 15px;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.features li:hover {
+  transform: translateY(-5px);
+  background: rgba(255,255,255,0.1);
+}
+
+.features li::before {
+  content: '🎮';
+  position: absolute;
+  left: -30px;
+  animation: bounce 1s ease-in-out infinite;
+}
+
+.download-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  position: relative;
+}
+
+.download-card {
+  background: rgba(255,255,255,0.1);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.download-info {
+  margin-bottom: 30px;
+}
+
+.download-info h3 {
+  color: #00ffff;
+  margin-bottom: 15px;
+}
+
+.download-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 1.5em;
+  color: #ff00ff;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 0.9em;
+  color: #888;
+}
+
+.download-btn {
+  padding: 25px 60px;
+  font-size: 1.8em;
+  background: linear-gradient(45deg, #00ffff, #ff00ff);
+  border: none;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+  box-shadow: 0 0 30px rgba(0,255,255,0.3);
+  animation: pulse 2s infinite;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.download-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 50px rgba(255,0,255,0.5);
+}
+
+.download-btn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+  transform: rotate(45deg);
+  animation: shine 3s infinite;
+}
+
+.floating-elements {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.floating-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(0,255,255,0.2), transparent);
+  animation: float 10s infinite linear;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) rotate(45deg); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes textGradient {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(20px, 20px) rotate(360deg); }
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 50px;
+  color: #666;
+  font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  
+  .features {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+<div class="main-container">
+  <div class="header">
+    <div class="logo-container">
+      <div class="company-name">QuarkLCloud Technology™</div>
+    </div>
+  </div>
+  
+  <div class="container">
+    <div class="game-info">
+      <h1>WormSlice</h1>
+      <p class="description">
+        Sumérgete en una experiencia única donde la velocidad, la estrategia y los reflejos se combinan en una aventura épica. WormSlice te pone al control de un gusano brillante en una lucha por la supervivencia contra un formidable ciempiés gigante.
+      </p>
+      <ul class="features">
+        <li>Sistema de control adaptativo para PC y móvil con joystick virtual optimizado</li>
+        <li>Personalización completa con diseños inspirados en banderas nacionales</li>
+        <li>Efectos visuales espectaculares y animaciones fluidas</li>
+        <li>Sistema de dificultad ajustable con IA mejorada</li>
+        <li>Fondos personalizables para una experiencia única</li>
+        <li>Power-ups y regeneradores con efectos visuales impresionantes</li>
+      </ul>
+    </div>
+    
+    <div class="download-section">
+      <div class="download-card">
+        <div class="download-info">
+          <h3>¡Descarga Ahora!</h3>
+          <div class="download-stats">
+            <div class="stat">
+              <div class="stat-number">4.8★</div>
+              <div class="stat-label">Calificación</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">10MB</div>
+              <div class="stat-label">Tamaño</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">1000+</div>
+              <div class="stat-label">Descargas</div>
+            </div>
+          </div>
+        </div>
+        <a href="https://download847.mediafire.com/eq6yxm5nt69g-6CUN8AX4eSStSlV3Xyf9cE1ern6RWv8ux1s0tJo9ibPnYfwAb7fLJC6x6I7zbd5mXrzf9WICOU2MfLtGK7w_9sPDAKwxluo00fFmJ_ko5sU7VsNk9GlMb6xr_dQN_xmxxUYRlt-R9kdOddTQUfaXAJHPzOS6m9-/mw4qddwv5rprm8g/WormSlice.apk" class="download-btn">
+          Descargar
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="floating-elements">
+    <div class="floating-circle" style="width: 100px; height: 100px; top: 10%; left: 5%;"></div>
+    <div class="floating-circle" style="width: 150px; height: 150px; top: 50%; right: 10%;"></div>
+    <div class="floating-circle" style="width: 80px; height: 80px; bottom: 20%; left: 50%;"></div>
+  </div>
+  
+  <div class="copyright">
+    © 2024 QuarkLCloud Technology™. Todos los derechos reservados.
+  </div>
+</div>
+</body>
+</html>
